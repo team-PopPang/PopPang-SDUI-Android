@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 생성기가 만든 파일이에요. 직접 고치지 말고 PopPang-SDUI-Spec의 assets/를 고쳐요. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="evenOdd"
+        android:pathData="M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20z M12 3.6a8.4 8.4 0 1 1 0 16.8a8.4 8.4 0 1 1 0-16.8z M12 6.4a1.25 1.25 0 1 0 0 2.5a1.25 1.25 0 1 0 0-2.5z M11.2 10.4h1.6v7.2h-1.6z" />
+</vector>

@@ -1,0 +1,147 @@
+{
+  "description": "두 플랫폼이 똑같이 찍는 스크린샷 장면이에요. 장면마다 글자 1.0배·1.3배로 찍어요. make screenshots가 iOS(시뮬레이터)와 Android(Robolectric)에서 찍고 README.md에 나란히 놓아요.",
+  "locale": "ko",
+  "width": 390,
+  "density": 3,
+  "scales": [1.0, 1.3],
+  "padding": 15,
+  "spacing": 12,
+  "scenes": [
+    {
+      "id": "element.text",
+      "title": "PPText 글꼴 역할 7개와 줄 수 제한",
+      "element": "PPText",
+      "cases": [
+        { "text": "titleLg 가을 피크닉 팝업스토어", "style": "titleLg" },
+        { "text": "labelMd 가을 피크닉 팝업스토어", "style": "labelMd" },
+        { "text": "labelSm 가을 피크닉 팝업스토어", "style": "labelSm" },
+        { "text": "bodyMd 가을 피크닉 팝업스토어", "style": "bodyMd" },
+        { "text": "bodyLong 성수동에서 열리는 가을 피크닉 팝업스토어예요. 돗자리와 바구니를 빌려 드려요.", "style": "bodyLong" },
+        { "text": "captionSm 1,204명이 봤어요", "style": "captionSm", "color": "textSecondary" },
+        { "text": "captionXs 라이프스타일", "style": "captionXs", "color": "textSecondary" },
+        { "text": "maxLines 1: 아주 긴 글자는 한 줄을 넘으면 말줄임표로 줄여서 보여 줘요.", "style": "bodyMd", "maxLines": 1 }
+      ]
+    },
+    {
+      "id": "element.icon",
+      "title": "PPIcon 아이콘 3개 × 크기 3단계",
+      "element": "PPIcon",
+      "layout": "row",
+      "cases": [
+        { "name": "info", "size": "sm", "color": "brand" },
+        { "name": "info", "size": "md", "color": "brand" },
+        { "name": "info", "size": "lg", "color": "brand" },
+        { "name": "warning", "size": "sm", "color": "textPrimary" },
+        { "name": "warning", "size": "md", "color": "textPrimary" },
+        { "name": "warning", "size": "lg", "color": "textPrimary" },
+        { "name": "chevronRight", "size": "sm", "color": "textTertiary" },
+        { "name": "chevronRight", "size": "md", "color": "textTertiary" },
+        { "name": "chevronRight", "size": "lg", "color": "textTertiary" }
+      ]
+    },
+    {
+      "id": "element.button",
+      "title": "PPButton 모양 2가지 × 크기 2가지",
+      "element": "PPButton",
+      "cases": [
+        { "title": "예약하기", "style": "primary", "size": "large" },
+        { "title": "예약하기", "style": "secondary", "size": "large" },
+        { "title": "예약하기", "style": "primary", "size": "small" },
+        { "title": "예약하기", "style": "secondary", "size": "small" }
+      ]
+    },
+    {
+      "id": "element.image",
+      "title": "PPImage fill·fit·주소 없음(가짜 이미지 2:1)",
+      "element": "PPImage",
+      "layout": "row",
+      "cases": [
+        { "url": "https://example.com/fake-image.png", "contentMode": "fill", "width": 100, "height": 100 },
+        { "url": "https://example.com/fake-image.png", "contentMode": "fit", "width": 100, "height": 100 },
+        { "url": "", "contentMode": "fill", "width": 100, "height": 100 }
+      ]
+    },
+    {
+      "id": "element.placeholder",
+      "title": "PPPlaceholder 블록(빛 효과 없이)",
+      "element": "PPPlaceholder",
+      "cases": [
+        { "height": 120, "radius": 10 },
+        { "width": 180, "height": 18 },
+        { "width": 240, "height": 14 }
+      ]
+    },
+    {
+      "id": "section.notice.banner",
+      "title": "notice.banner warning·info, 액션 있음·없음",
+      "sections": [
+        {
+          "id": "warning_action",
+          "type": "notice.banner",
+          "props": {
+            "tone": "warning",
+            "title": "사전 예약 필수",
+            "body": "주말에는 예약한 분만 입장할 수 있어요.",
+            "action": { "type": "openUrl", "url": "https://example.com/reservation" }
+          }
+        },
+        {
+          "id": "info_body",
+          "type": "notice.banner",
+          "props": { "title": "주차할 곳이 없어요", "body": "근처 공영 주차장을 이용해 주세요." }
+        },
+        {
+          "id": "info_title",
+          "type": "notice.banner",
+          "props": { "title": "반려동물과 함께 들어갈 수 있어요" }
+        }
+      ]
+    },
+    {
+      "id": "section.button.cta",
+      "title": "button.cta primary·secondary",
+      "sections": [
+        {
+          "id": "primary",
+          "type": "button.cta",
+          "props": { "title": "예약하기", "action": { "type": "openUrl", "url": "https://example.com/reservation" } }
+        },
+        {
+          "id": "secondary",
+          "type": "button.cta",
+          "props": {
+            "style": "secondary",
+            "title": "주소 복사하기",
+            "action": { "type": "copy", "text": "서울 성동구 연무장길 1", "toast": "주소를 복사했어요" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "section.image.banner",
+      "title": "image.banner 기본(3:1)·fullBleed(2:1)",
+      "sections": [
+        {
+          "id": "inset",
+          "type": "image.banner",
+          "props": {
+            "imageUrl": "https://example.com/fake-image.png",
+            "aspectRatio": 3,
+            "accessibilityLabel": "가을 기획전 배너",
+            "action": { "type": "navigate", "route": "popup/0f8a2c4e-1b3d-4e5f-8a9b-0c1d2e3f4a5b" }
+          }
+        },
+        {
+          "id": "full_bleed",
+          "type": "image.banner",
+          "props": {
+            "imageUrl": "https://example.com/fake-image.png",
+            "aspectRatio": 2,
+            "accessibilityLabel": "가을 기획전 배너",
+            "fullBleed": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "description": "모르는 액션과 route는 섹션은 그리고, 누르면 아무 일도 하지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_share",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "공유하기",
+          "action": {
+            "type": "share"
+          }
+        }
+      },
+      {
+        "id": "addon_home",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "홈으로",
+          "action": {
+            "type": "navigate",
+            "route": "home"
+          }
+        }
+      },
+      {
+        "id": "addon_steps",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "예약하기",
+          "action": {
+            "type": "sequence",
+            "actions": [
+              {
+                "type": "vibrate"
+              },
+              {
+                "type": "openUrl",
+                "url": "https://example.com/reservation"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_share",
+        "type": "button.cta"
+      },
+      {
+        "id": "addon_home",
+        "type": "notice.banner"
+      },
+      {
+        "id": "addon_steps",
+        "type": "button.cta"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "unsupportedAction",
+        "section": "addon_share"
+      },
+      {
+        "code": "unsupportedAction",
+        "section": "addon_home"
+      },
+      {
+        "code": "unsupportedAction",
+        "section": "addon_steps"
+      }
+    ]
+  }
+}

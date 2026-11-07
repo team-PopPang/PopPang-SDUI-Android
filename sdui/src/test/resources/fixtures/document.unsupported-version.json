@@ -1,0 +1,30 @@
+{
+  "description": "schemaVersion major가 다르면 문서를 쓰지 않고, 앱은 같은 응답으로 네이티브를 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "2.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "unsupportedVersion"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "description": "button.cta 잘못된 props: 아는 액션인데 값이 틀리면(https가 아닌 주소) 그리지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_http",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "예약하기",
+          "action": {
+            "type": "openUrl",
+            "url": "http://example.com"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "invalidProps",
+        "section": "addon_http"
+      }
+    ]
+  }
+}

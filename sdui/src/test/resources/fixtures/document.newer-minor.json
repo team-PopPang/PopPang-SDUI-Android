@@ -1,0 +1,35 @@
+{
+  "description": "minor가 더 높으면 그대로 그리고, 모르는 필드와 props는 무시해요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.3",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "theme": {
+      "accent": "orange"
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "사전 예약 필수",
+          "subtitle": "새 버전에서 더한 값"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": []
+  }
+}

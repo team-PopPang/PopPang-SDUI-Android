@@ -1,0 +1,33 @@
+{
+  "description": "image.banner 빈 값: 필수인 설명이 비면 그리지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_no_label",
+        "type": "image.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "imageUrl": "https://example.com/a.jpg",
+          "aspectRatio": 2,
+          "accessibilityLabel": ""
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "emptySection",
+        "section": "addon_no_label"
+      }
+    ]
+  }
+}

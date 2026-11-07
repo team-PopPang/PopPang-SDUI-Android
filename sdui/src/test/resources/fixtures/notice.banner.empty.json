@@ -1,0 +1,45 @@
+{
+  "description": "notice.banner 빈 값: 필수인 title이 비면 그리지 않고, 선택인 body가 비면 그 줄만 빼고 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_empty_title",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": ""
+        }
+      },
+      {
+        "id": "addon_empty_body",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "주차할 곳이 없어요",
+          "body": ""
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_empty_body",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "emptySection",
+        "section": "addon_empty_title"
+      }
+    ]
+  }
+}

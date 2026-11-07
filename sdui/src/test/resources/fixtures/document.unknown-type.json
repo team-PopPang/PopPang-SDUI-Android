@@ -1,0 +1,54 @@
+{
+  "description": "모르는 type은 fallback을 그리고, fallback이 없으면 건너뛰어요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_review",
+        "type": "review.preview",
+        "area": "popup_detail.addons",
+        "props": {
+          "count": 3
+        }
+      },
+      {
+        "id": "addon_review_fallback",
+        "type": "review.preview",
+        "area": "popup_detail.addons",
+        "props": {
+          "count": 3
+        },
+        "fallback": {
+          "type": "notice.banner",
+          "props": {
+            "title": "리뷰는 앱을 업데이트하면 볼 수 있어요"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_review_fallback",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "unknownType",
+        "section": "addon_review"
+      },
+      {
+        "code": "unknownType",
+        "section": "addon_review_fallback"
+      }
+    ]
+  }
+}

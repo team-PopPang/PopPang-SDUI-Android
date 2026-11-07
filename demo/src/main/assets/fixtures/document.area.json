@@ -1,0 +1,46 @@
+{
+  "description": "자리(area)를 주면 그 자리 섹션만 그려요. 본문 섹션(area 없음)과 다른 자리 섹션은 조용히 넘어가요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      },
+      {
+        "id": "body_notice",
+        "type": "notice.banner",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      },
+      {
+        "id": "other_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.footer",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": []
+  }
+}

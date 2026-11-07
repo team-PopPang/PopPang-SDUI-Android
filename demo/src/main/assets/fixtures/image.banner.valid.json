@@ -1,0 +1,38 @@
+{
+  "description": "image.banner 정상: 주소·비율·설명이 있으면 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_banner",
+        "type": "image.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "imageUrl": "https://poppang.co.kr/images/20261020-101500_k3x9q2m7v1p8z4/banner.jpg",
+          "aspectRatio": 3,
+          "accessibilityLabel": "가을 피크닉 기획전 안내",
+          "fullBleed": true,
+          "action": {
+            "type": "navigate",
+            "route": "popup/1b6f0d2e-8a47-4f3c-b2d9-0e6a7c5f9d21"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_banner",
+        "type": "image.banner"
+      }
+    ],
+    "diagnostics": []
+  }
+}

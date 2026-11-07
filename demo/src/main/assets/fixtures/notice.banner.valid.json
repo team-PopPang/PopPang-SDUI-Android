@@ -1,0 +1,37 @@
+{
+  "description": "notice.banner 정상: 제목·설명·액션이 있으면 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "tone": "warning",
+          "title": "사전 예약 필수",
+          "body": "주말에는 예약한 분만 입장할 수 있어요.",
+          "action": {
+            "type": "openUrl",
+            "url": "https://example.com/reservation"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": []
+  }
+}

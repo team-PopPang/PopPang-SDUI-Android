@@ -1,0 +1,36 @@
+{
+  "description": "button.cta 정상: 제목과 액션이 있으면 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_cta",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "style": "secondary",
+          "title": "다른 팝업 보기",
+          "action": {
+            "type": "navigate",
+            "route": "popup/1b6f0d2e-8a47-4f3c-b2d9-0e6a7c5f9d21"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_cta",
+        "type": "button.cta"
+      }
+    ],
+    "diagnostics": []
+  }
+}

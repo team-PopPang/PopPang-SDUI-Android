@@ -1,0 +1,23 @@
+name: Release
+
+# Spec CI가 버전 태그(예: 1.0.0)를 올리면 GitHub 릴리스를 만들어요.
+on:
+  push:
+    tags: ["[0-9]+.[0-9]+.[0-9]+"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: GitHub 릴리스 만들기
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 릴리스 만들기
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" \
+            --notes "PopPang SDUI Android SDK 버전 $TAG. 받는 법은 README를 봐요."

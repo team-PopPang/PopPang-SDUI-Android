@@ -1,0 +1,48 @@
+{
+  "description": "id가 겹치면 먼저 나온 섹션만 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      },
+      {
+        "id": "addon_notice",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "예약하기",
+          "action": {
+            "type": "openUrl",
+            "url": "https://example.com/reservation"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "duplicateId",
+        "section": "addon_notice"
+      }
+    ]
+  }
+}

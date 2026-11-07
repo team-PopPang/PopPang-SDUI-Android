@@ -1,0 +1,58 @@
+{
+  "description": "모르는 tone·style 값은 기본값으로 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "tone": "danger",
+          "title": "사전 예약 필수"
+        }
+      },
+      {
+        "id": "addon_cta",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "style": "ghost",
+          "title": "예약하기",
+          "action": {
+            "type": "openUrl",
+            "url": "https://example.com/reservation"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_notice",
+        "type": "notice.banner"
+      },
+      {
+        "id": "addon_cta",
+        "type": "button.cta"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "unknownEnum",
+        "section": "addon_notice"
+      },
+      {
+        "code": "unknownEnum",
+        "section": "addon_cta"
+      }
+    ]
+  }
+}

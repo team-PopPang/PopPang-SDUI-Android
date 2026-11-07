@@ -1,0 +1,47 @@
+{
+  "description": "button.cta 빈 값: 제목이 비거나 액션이 없으면 그리지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_no_title",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "",
+          "action": {
+            "type": "openUrl",
+            "url": "https://example.com/reservation"
+          }
+        }
+      },
+      {
+        "id": "addon_no_action",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "예약하기"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "emptySection",
+        "section": "addon_no_title"
+      },
+      {
+        "code": "emptySection",
+        "section": "addon_no_action"
+      }
+    ]
+  }
+}

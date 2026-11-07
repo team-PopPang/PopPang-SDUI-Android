@@ -1,0 +1,58 @@
+{
+  "description": "notice.banner 잘못된 props: 타입이나 한도가 틀리면 fallback을 그리고, fallback이 없으면 건너뛰어요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_bad_type",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": 42
+        }
+      },
+      {
+        "id": "addon_too_long",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가"
+        },
+        "fallback": {
+          "type": "button.cta",
+          "props": {
+            "title": "자세히 보기",
+            "action": {
+              "type": "openUrl",
+              "url": "https://example.com/reservation"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_too_long",
+        "type": "button.cta"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "invalidProps",
+        "section": "addon_bad_type"
+      },
+      {
+        "code": "invalidProps",
+        "section": "addon_too_long"
+      }
+    ]
+  }
+}

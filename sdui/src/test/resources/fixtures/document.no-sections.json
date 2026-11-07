@@ -1,0 +1,20 @@
+{
+  "description": "sections가 없으면 아무것도 그리지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    }
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "invalidDocument"
+      }
+    ]
+  }
+}

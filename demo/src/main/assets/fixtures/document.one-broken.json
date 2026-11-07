@@ -1,0 +1,58 @@
+{
+  "description": "섹션 하나가 깨져도 나머지는 그려요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_first",
+        "type": "notice.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "사전 예약 필수"
+        }
+      },
+      {
+        "id": "addon_broken",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": "예약하기"
+      },
+      {
+        "id": "addon_last",
+        "type": "button.cta",
+        "area": "popup_detail.addons",
+        "props": {
+          "title": "예약하기",
+          "action": {
+            "type": "openUrl",
+            "url": "https://example.com/reservation"
+          }
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [
+      {
+        "id": "addon_first",
+        "type": "notice.banner"
+      },
+      {
+        "id": "addon_last",
+        "type": "button.cta"
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "invalidProps",
+        "section": "addon_broken"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "description": "image.banner 잘못된 props: 비율이 범위 밖이거나 https가 아니면 그리지 않아요.",
+  "area": "popup_detail.addons",
+  "document": {
+    "schemaVersion": "1.0",
+    "locale": "ko",
+    "screen": {
+      "id": "popup_detail",
+      "revision": 0
+    },
+    "sections": [
+      {
+        "id": "addon_ratio",
+        "type": "image.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "imageUrl": "https://example.com/a.jpg",
+          "aspectRatio": 0,
+          "accessibilityLabel": "배너"
+        }
+      },
+      {
+        "id": "addon_http_image",
+        "type": "image.banner",
+        "area": "popup_detail.addons",
+        "props": {
+          "imageUrl": "http://example.com/a.jpg",
+          "aspectRatio": 2,
+          "accessibilityLabel": "배너"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "rendered": [],
+    "diagnostics": [
+      {
+        "code": "invalidProps",
+        "section": "addon_ratio"
+      },
+      {
+        "code": "invalidProps",
+        "section": "addon_http_image"
+      }
+    ]
+  }
+}
